@@ -1,0 +1,35 @@
+<tr>
+    <td bgcolor="{{ widget.theme.background_color }}" align="{{ widget.theme.text_align }}" style="padding: {{ widget.theme.outer_padding }};" class="section-padding">
+        <table border="0" cellpadding="0" cellspacing="0" width="500" class="responsive-table">
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    {% if widget.header %}
+                                    <tr>
+                                        <td align="{{ widget.header_theme.text_align }}" style="padding: {{ widget.header_theme.outer_padding }}; font-size: {{ widget.header_theme.font_size }}px; font-family: {{ widget.header_theme.font_family }}; color: {{ widget.header_theme.color }};" class="padding-copy">
+                                            {{ widget.header|linebreaks }}
+                                        </td>
+                                    </tr>
+                                    {% endif %}
+                                    {% if widget.body %}
+                                    <tr>
+                                        <td align="{{ widget.body_theme.text_align }}" style="padding: {{ widget.body_theme.outer_padding }}; font-size: {{ widget.body_theme.font_size }}px; line-height: {{ widget.body_theme.line_height }}px; font-family: {{ widget.body_theme.font_family }}; color: {{ widget.body_theme.color }};" class="padding-copy">
+                                            {{ widget.body|linebreaks }}
+                                        </td>
+                                    </tr>
+                                    {% endif %}
+                                </table>
+                            </td>
+                        </tr>
+                        {% if widget.button %}
+                            {% include "email/widgets/button.html" with button=widget.button font_family=font_family %}
+                        {% endif %}
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>

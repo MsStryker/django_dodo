@@ -1,0 +1,28 @@
+<tr>
+    <td bgcolor="{{ widget.theme.background_color }}" align="center" style="padding: {{ widget.theme.outer_padding }};">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+        <tr>
+        <td align="center" valign="top" width="500">
+        <![endif]-->
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: {{ widget.theme.width }}px;" class="responsive-table">
+            <tr>
+                <td align="center" style="font-size: {{ widget.theme.font_size }}px; line-height: {{ widget.theme.line_height }}px; font-family: {{ widget.theme.font_family }}; color:{{ widget.theme.color }};">
+                    {% if widget.header %}{{ widget.header }}{% endif %}
+                    <br>
+                    {{ widget.company_address }}
+                    <br>
+                    Want to change how you receive emails?
+                    <br>
+                    <a href="{EMAIL_PREFERENCES}" target="_blank">Email Preferences</a>
+                    {% if unsubscribe_link %}<span style="font-family: {{ widget.theme.font_family }}; font-size: {{ widget.theme.font_size }}px; color: {{ widget.theme.color }};">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="{{ unsubscribe_link }}" target="_blank" style="color: {{ widget.theme.color }}; text-decoration: none;">Unsubscribe</a>{% endif %}
+                </td>
+            </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+    </td>
+</tr>

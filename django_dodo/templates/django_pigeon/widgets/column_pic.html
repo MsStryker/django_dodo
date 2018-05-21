@@ -1,0 +1,67 @@
+{% load static from staticfiles %}
+<tr>
+{#    <td bgcolor="{{ widget.theme.background_color }}" align="center" style="padding: 20px 15px 20px 15px;" class="section-padding">#}
+{#        <table border="0" cellpadding="0" cellspacing="0" width="500" style="padding:0 0 20px 0;" class="responsive-table">#}
+{#            <tr>#}
+                <td align="center" bgcolor="{{ widget.theme.background_color }}" height="100%" valign="top" width="100%" style="padding-bottom: 35px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                    <tr>
+                    <td align="center" valign="top" width="500">
+                    <![endif]-->
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:{{ widget.theme.width }}px;">
+                        <tr>
+                            <td align="center" valign="top" style="font-size:0;"{% if widget.direction_ltr %} dir="rtl"{% endif %}>
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                                <tr>
+                                <td align="left" valign="top" width="150">
+                                <![endif]-->
+                                <div style="display:inline-block; margin: 0 -2px; max-width:150px; vertical-align:top; width:100%;"{% if widget.direction_ltr %} dir="ltr"{% endif %}>
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="150">
+                                        <tr>
+                                            <td valign="top"><a href="{{ widget.image_link_url }}" target="_blank"><img src="{% static widget.image.url %}" alt="{{ widget.image_alt_text }}" width="150" height="200" border="0" style="display: block; font-family: {{ widget.theme.font_family }}; color: {{ widget.theme.color }}; font-size: {{ widget.alt_text_size }}px;"></a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                <td align="left" valign="top" width="350">
+                                <![endif]-->
+                                <div style="display:inline-block; margin: 0 -2px; max-width:350px; vertical-align:top; width:100%;"{% if widget.direction_ltr %} dir="ltr"{% else %} class="wrapper"{% endif %}>
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 325px;{% if not widget.direction_ltr %} float: right;{% endif %}"{% if not widget.direction_ltr %} class="wrapper"{% endif %}>
+                                        <tr>
+                                            <td style="padding: 40px 0 0 0;" class="no-padding">
+                                                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                    <tr>
+                                                        <td align="left" style="padding: 0 0 5px 0; font-size: {{ widget.header_theme.font_size }}px; font-family: {{ widget.header_theme.font_family }}; font-weight: normal; color: {{ widget.header_theme.color }};" class="padding-copy">{{ widget.header }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                         <td align="left" style="padding: 10px 0 15px 0; font-size: {{ widget.body_theme.font_size }}px; line-height: {{ widget.body_theme.line_height }}px; font-family: {{ widget.body_theme.font_family }}; color: {{ widget.body_theme.color }};" class="padding-copy">{{ widget.body }}</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        {% if widget.button %}
+                                            {% include "email/widgets/button.html" with button=widget.button %}
+                                        {% endif %}
+                                    </table>
+                                </div>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+{#            </tr>#}
+{#        </table>#}
+{#    </td>#}
+</tr>

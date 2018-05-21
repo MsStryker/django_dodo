@@ -1,0 +1,9 @@
+{% for widget in widgets %}
+{{ widget.header }}
+{{ widget.body }}
+{% if widget.button %}
+    {{ widget.button.url_link }}
+{% endif %}
+{% endfor %}
+
+&copy; {% now "Y" %} {{ address }}

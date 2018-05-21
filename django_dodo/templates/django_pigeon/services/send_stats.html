@@ -1,0 +1,45 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <style>table {width: 100%;}</style>
+{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript"></script>
+{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+{% block content_title %}<h1>SES Stats</h1>{% endblock %}
+
+{% block content %}
+<div>
+    <p>TODO: Complete this</p>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        <h2>Verified Emails</h2>
+        <table id="verified_emails">
+            <thead>
+                <tr>
+                    <th>Email Address</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for email_address in verified_emails %}
+                <tr>
+                    <td>{{ email_address }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr><td><strong>{{ verified_emails|length }}</strong></td></tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends "email/email_base.html" %}
+{% block body %}
+<body bgcolor="#FFFFFF" style="background-color: #FFFFFF; margin: 0 !important; padding: 0 !important;">
+    <div style="display: none; font-size: 1px; color: {{ email_template.base_theme.color }}; line-height: 1px; font-family: {{ email_template.base_theme.font_family }}; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        {{ email_template.pre_header }}
+    </div>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+        <tbody>
+        <tr height="20px"></tr>
+        <tr align="center">
+            <td width="10px"></td>
+            <td>
+                <table border="0" cellpadding="0" cellspacing="0" style="max-width: 600px;border: 1px solid #E0E0E0;">
+                    {% include "email/widgets/logo.html" %}
+                    {% for widget in widgets %}
+                        {% include widget.path with font_family=email_template.font_family %}
+                    {% endfor %}
+                </table>
+            </td>
+            <td width="10px"></td>
+        </tr>
+        <tr height="20px"></tr>
+        </tbody>
+
+    </table>
+</body>
+{% endblock body %}
